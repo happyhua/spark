@@ -41,10 +41,8 @@ public interface IHelper {
         dataset.show();
     }
 
-    default Dataset<Employee> createEmployeeDataset(SparkSession spark) {
-        Dataset<Row> dataset = spark.read().option("multiline", true).json(createPath(employeeJsonFile));
-
-        return dataset.as(Encoders.bean(Employee.class));
+    default Dataset<Row> createEmployeeDataset(SparkSession spark) {
+        return spark.read().option("multiline", true).json(createPath(employeeJsonFile));
     }
 
     // Create department Dataset from a java List

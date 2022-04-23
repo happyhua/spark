@@ -1,6 +1,7 @@
 package spark.java;
 
 import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Encoders;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 import spark.java.model.Employee;
@@ -21,7 +22,7 @@ public class Assignment implements IHelper, Runnable {
 
         assignment2(department, spark);
 
-        assignment3(department, createEmployeeDataset(spark), spark);
+        assignment3(department, createEmployeeDataset(spark).as(Encoders.bean(Employee.class)), spark);
     }
 
     /**
@@ -43,9 +44,9 @@ public class Assignment implements IHelper, Runnable {
      * @param department The department Dataset.
      */
     public void assignment2(Dataset<Row> department, SparkSession spark) {
-        // TODO, do it in spark api way
+        // TODO, do it in Spark SQL way
 
-        // TODO, do it in spark sql way
+        // TODO, do it in Spark API way
     }
 
     /**
@@ -55,8 +56,8 @@ public class Assignment implements IHelper, Runnable {
      * @param employee   The employee Dataset.
      */
     public void assignment3(Dataset<Row> department, Dataset<Employee> employee, SparkSession spark) {
-        // TODO, do it in spark api way
+        // TODO, do it in Spark SQL way
 
-        // TODO, do it in spark sql way
+        // TODO, do it in Spark API way
     }
 }
